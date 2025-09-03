@@ -60,7 +60,6 @@ const buyCart = async () => {
   try {
     await api.post("/cart/send-email", {}); // send empty object
     alert("Cart ordered! We will contact you soon.");
-    setCart([]);
   } catch (err) {
     console.error("❌ Email request failed:", err);
     alert("Failed to send email.");
@@ -68,21 +67,7 @@ const buyCart = async () => {
 };
 
 
-  if (isLoading) {
-    return (
-      <div className="loading-wrapper" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100vw', height: '100vh', backgroundColor: 'black' }}>
-        <Atom color="#32cd32" size="xlarge" text="Loading" textColor="#32cd32" />
-      </div>
-    );
-  }
 
-  if (!Array.isArray(cart) || cart.length === 0) {
-    return (
-      <div className="no-products">
-        <Slab color="#49cc31" size="large" text="No Products Available" textColor="#ff0000" />
-      </div>
-    );
-  }
 
   return (
     <div className='Cart-Container'>
@@ -91,12 +76,18 @@ const buyCart = async () => {
           <FaBackward /> Back
         </Button>
       </div>
-       {isLoading &&
-    
-      <div className="loading-wrapper" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100vw', height: '100vh', backgroundColor: 'black' }}>
-        <Atom color="#32cd32" size="xlarge" text="Loading" textColor="#32cd32" />
-      </div>
-  }
+       {isLoading && (
+        <div className="center-state">
+          <Atom color="#32cd32" size="xlarge" text="Loading" textColor="#32cd32" />
+        </div>
+      )}
+
+      {/* No Products */}
+      {!isLoading && (!Array.isArray(cart) || cart.length === 0) && (
+        <div className="center-state">
+          <Slab color="#49cc31" size="large" text="No Products Available" textColor="#ff0000" />
+        </div>
+      )}
 
       <div className="products-display">
         {cart.map((product) => (
