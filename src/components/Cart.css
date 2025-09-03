@@ -47,9 +47,5 @@
 
 /* BUY CART BUTTON */
 .buy-cart-btn {
-  position: fixed;        /* 👈 fixed at bottom */
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 20;
+left: 50%;
 }
