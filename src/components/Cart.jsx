@@ -6,7 +6,7 @@ import api from '../api';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { Atom, Slab } from 'react-loading-indicators';
-
+import './Cart.css'
 const renderStars = (rating) => {
   const fullStars = Math.floor(rating);
   const halfStar = rating % 1 >= 0.5;
@@ -89,6 +89,12 @@ const Cart = () => {
           <FaBackward /> Back
         </Button>
       </div>
+      if (isLoading) {
+    
+      <div className="loading-wrapper" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100vw', height: '100vh', backgroundColor: 'black' }}>
+        <Atom color="#32cd32" size="xlarge" text="Loading" textColor="#32cd32" />
+      </div>
+  }
 
       <div className="products-display">
         {cart.map((product) => (
