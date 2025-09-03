@@ -1,18 +1,22 @@
-.Cart-Container
-{ position: relative;
+.Cart-Container {
+  position: relative;
   width: 100%;
-  height: 100vh;
-  background: #000000;
+  min-height: 100vh;   /* 👈 full screen + expand with content */
+  background: #000000; /* always black */
   display: flex;
-  flex-direction: column;  /* 👈 stack items vertically */
-  overflow: hidden;  
+  flex-direction: column;
+  align-items: center;  /* 👈 center children horizontally */
+  overflow-x: hidden;
+  padding-bottom: 80px; /* space for Buy Cart button */
 }
+
 /* Back button wrapper */
 .back-btn-wrapper {
   padding: 10px 20px;
   position: sticky;
   top: 60px;  /* leave space for main navbar */
   z-index: 10;
+  align-self: flex-start; /* 👈 keep back button at left */
 }
 
 .card-product {
@@ -29,9 +33,9 @@
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  flex: 1;                  /* take remaining height */
-  overflow-y: auto;          /* 👈 scroll only here */
-  padding-bottom: 20px;
+  flex: 1;
+  gap: 1rem;
+  padding: 20px;
 }
 
 .card-product img {
@@ -39,4 +43,13 @@
   height: 200px;   /* fix height */
   object-fit: cover;
   border-radius: 8px;
+}
+
+/* BUY CART BUTTON */
+.buy-cart-btn {
+  position: fixed;        /* 👈 fixed at bottom */
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
 }

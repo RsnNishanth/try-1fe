@@ -115,7 +115,9 @@ const Cart = () => {
         ))}
       </div>
 
-      <Button variant="success" onClick={buyCart}>Buy Cart</Button>
+      <Button variant="success" className="buy-cart-btn" onClick={buyCart}>
+  Buy Cart
+</Button>
 
       {error && <div className="error-message">Error: {error}</div>}
     </div>
