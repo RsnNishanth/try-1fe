@@ -89,7 +89,7 @@ const Cart = () => {
           <FaBackward /> Back
         </Button>
       </div>
-      if (isLoading) {
+       {isLoading &&
     
       <div className="loading-wrapper" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100vw', height: '100vh', backgroundColor: 'black' }}>
         <Atom color="#32cd32" size="xlarge" text="Loading" textColor="#32cd32" />
