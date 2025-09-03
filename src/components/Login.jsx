@@ -25,9 +25,10 @@ const Login = () => {
   
 const onSubmit = async (data) => {
   try {
-    const { username, password } = data; // ✅ proper destructuring
-    const res = await api.post("/login", { username, password });
-    console.log(res.data); // see response in console
+    const { username, password } = data;
+    const res = await api.post("/login", { username, password }, { withCredentials: true });
+
+    console.log("Login response:", res.data);
 
     if (res.data.userId) {
       alert("Login successful!");
@@ -36,11 +37,12 @@ const onSubmit = async (data) => {
       setError(res.data.message || "Login failed");
     }
   } catch (err) {
-    console.error(err);
+    console.error("Login error:", err);
     setError("Something went wrong");
   }
   reset();
 };
+
 
 
 
