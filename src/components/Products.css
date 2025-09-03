@@ -1,0 +1,91 @@
+/* MAIN PRODUCT CONTAINER */
+.product-container {
+  position: relative;
+  width: 100%;
+  background: #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  /* ❌ remove padding-top here */
+}
+
+/* CATEGORY NAVBAR */
+.links-wrapper {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: fixed;
+  top: 56px; /* 👈 below main navbar (assumed main navbar height = 60px) */
+  left: 0;
+  z-index: 999;
+  background: #000;
+  border-bottom: 1px solid #222;
+}
+
+.links-wrapper a {
+  color: white;
+  margin: 0 1.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.links-wrapper a:hover {
+  color: #4DFF0CFF !important;
+}
+
+/* PRODUCT CARDS */
+.card-product {
+  background-color: #ffffff25; /* semi-transparent background */
+  border-radius: 8px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.card-product .list-group-item {
+  background-color: inherit !important;
+  border: none;
+  font-size: 0.9rem;
+}
+
+/* PRODUCTS GRID */
+.products-display {
+  margin-top: 120px; /* leave space for navbars */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  height:85vh; /* full height minus navbars */
+  overflow-y: scroll; /* scroll only products */
+  padding: 120px 1rem 1rem 1rem;  /* 👈 added padding-top inside scroll */
+  gap: 1rem;
+  
+}
+
+/* PRODUCT IMAGES */
+.card-product img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+/* SCROLLBAR STYLING */
+.products-display::-webkit-scrollbar {
+  width: 8px;
+}
+
+.products-display::-webkit-scrollbar-thumb {
+  background-color: #4DFF0C;
+  border-radius: 4px;
+}
+
+.products-display::-webkit-scrollbar-track {
+  background: #111;
+}
+
+.ad-btn{
+  background-color: #caebbe;
+}

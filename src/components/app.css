@@ -1,0 +1,19 @@
+.custom-navbar {
+  background: #1b1a1a00 !important; /* transparent default */
+}
+
+/* app.css */
+.navbar.products-navbar {
+  background-color: #000 !important;
+}
+
+
+.navlinks {
+  color: white !important; /* keep links white */
+  padding-left: 2rem;
+  transition: color 0.3s ease;
+}
+
+.navlinks:hover {
+  color: #4DFF0CFF !important; /* bright green hover */
+}

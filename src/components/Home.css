@@ -1,0 +1,109 @@
+/* ================== HOME CONTAINER ================== */
+.home-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: #000000;
+  color: #ffffff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ================== RINGS BACKGROUND ================== */
+.rings-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 6px solid transparent;
+  border-top: 6px solid #00ff3c;
+  border-right: 6px solid #f50707;
+  border-bottom: 6px solid #f7f302;
+  border-left: 6px solid #0cdffb;
+  border-radius: 50%;
+  animation: rotate linear infinite;
+  opacity: 0.25;
+  filter: drop-shadow(0 0 12px rgba(0, 255, 200, 0.6));
+}
+
+.ring:nth-of-type(1) {
+  width: 400px;
+  height: 400px;
+  animation-duration: 15s;
+}
+.ring:nth-of-type(2) {
+  width: 600px;
+  height: 600px;
+  animation-duration: 20s;
+}
+.ring:nth-of-type(3) {
+  width: 800px;
+  height: 800px;
+  animation-duration: 30s;
+}
+
+@keyframes rotate {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* ================== HERO SECTION ================== */
+.hero-section {
+  z-index: 1;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 3rem; /* moved 2rem down */
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: #32cd32;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  color: #bbbbbb;
+  margin-bottom: 20px;
+}
+
+.auth-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* ================== CATEGORY SECTION ================== */
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: #32cd32;
+}
+
+.category-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-card:hover {
+  background: rgba(50, 205, 50, 0.2);
+  transform: translateY(-5px);
+  border-color: #32cd32;
+}
