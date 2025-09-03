@@ -107,10 +107,14 @@ const buyCart = async () => {
           </Card>
         ))}
       </div>
-
-      <Button variant="success" className="buy-cart-btn" onClick={buyCart}>
+{!isLoading && (!Array.isArray(cart) || cart.length === 0) && (
+        <div className="center-state">
+         <Button variant="success" className="buy-cart-btn" onClick={buyCart}>
   Buy Cart
 </Button>
+        </div>
+      )}
+      
 
       {error && <div className="error-message">Error: {error}</div>}
     </div>
