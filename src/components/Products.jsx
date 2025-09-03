@@ -30,14 +30,19 @@ const Products = () => {
 
 const addToCart = async (product) => {
   try {
-    await api.post("/cartpost", { productId: product.id, quantity: 1 });
+    await api.post(
+      "/cartpost",
+      { productId: product.id, quantity: 1 },
+      { withCredentials: true }   // 👈 must be here if not global
+    );
     alert("Added to cart!");
   } catch (err) {
-    console.log(err);
-    alert("Login first");
+    console.log("❌ Add to cart error:", err);
+    alert("Please login first");
     navigate("/login");
   }
 };
+
 
 
   const handleLogout = async () => {
