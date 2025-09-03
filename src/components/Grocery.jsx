@@ -7,6 +7,7 @@ import useFetch from './Fetch/UseFetch';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { Atom, Slab } from 'react-loading-indicators';
+import api from "../api.js";
 
 const renderStars = (rating) => {
   const fullStars = Math.floor(rating);
@@ -22,8 +23,23 @@ const renderStars = (rating) => {
   );
 };
 
+
 const Grocery = () => {  const navigate = useNavigate();
   let { products, error, isLoading } = useFetch("https://try-1-bi0l.onrender.com/products/grocery");
+  const addToCart = async (product) => {
+  try {
+    await api.post(
+      "/cartpost",
+      { productId: product.id, quantity: 1 },
+      { withCredentials: true }   // 👈 must be here if not global
+    );
+    alert("Added to cart!");
+  } catch (err) {
+    console.log("❌ Add to cart error:", err);
+    alert("Please login first");
+    navigate("/login");
+  }
+};
 
   if (isLoading) {
     return (
@@ -63,6 +79,11 @@ const Grocery = () => {  const navigate = useNavigate();
               <ListGroup.Item>₹ {product.price.toFixed(2)}</ListGroup.Item>
               <ListGroup.Item>
                 {renderStars(product.rating)} ({product.rating.toFixed(1)})
+              </ListGroup.Item>
+              <ListGroup.Item style={{ display: 'flex', justifyContent: 'center' }}>
+                <Button className="ad-btn" onClick={() => addToCart(product)}>
+                  <FaCartPlus /> Add
+                </Button>
               </ListGroup.Item>
             </ListGroup>
           </Card>
