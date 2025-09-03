@@ -56,15 +56,16 @@ const Cart = () => {
     }
   };
 
-  const buyCart = async () => {
-    try {
-      await api.post("/cart/send-email");
-      alert("Cart ordered! We will contact you soon.");
-    } catch (err) {
-      console.error(err);
-      alert("Failed to send email.");
-    }
-  };
+const buyCart = async () => {
+  try {
+    await api.post("/cart/send-email", {}); // send empty object
+    alert("Cart ordered! We will contact you soon.");
+  } catch (err) {
+    console.error("❌ Email request failed:", err);
+    alert("Failed to send email.");
+  }
+};
+
 
   if (isLoading) {
     return (
