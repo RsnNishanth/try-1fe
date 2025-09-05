@@ -1,6 +1,6 @@
 import React from 'react'
 import Button from 'react-bootstrap/esm/Button'
-import { FaBackward } from "react-icons/fa6";
+import { FaBackward,FaCartPlus } from "react-icons/fa6";
 import './Watch.css'
 import { useNavigate } from 'react-router-dom';
 import useFetch from './Fetch/UseFetch';

@@ -1,7 +1,7 @@
 import React from 'react'
 import './Grocery.css';
 import Button from 'react-bootstrap/esm/Button'
-import { FaBackward } from "react-icons/fa6";
+import { FaBackward,FaCartPlus } from "react-icons/fa6";
 import { useNavigate } from 'react-router-dom';
 import useFetch from './Fetch/UseFetch';
 import Card from 'react-bootstrap/Card';

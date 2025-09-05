@@ -3,7 +3,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Books.css';
 import Button from 'react-bootstrap/esm/Button';
-import { FaBackward } from "react-icons/fa6";
+import { FaBackward, FaCartPlus } from "react-icons/fa6";
 import useFetch from './Fetch/UseFetch';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';

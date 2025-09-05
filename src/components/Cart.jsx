@@ -60,6 +60,7 @@ const buyCart = async () => {
   try {
     await api.post("/cart/send-email", {}); // send empty object
     alert("Cart ordered! We will contact you soon.");
+    fetchCart();
   } catch (err) {
     console.error("❌ Email request failed:", err);
     alert("Failed to send email.");
