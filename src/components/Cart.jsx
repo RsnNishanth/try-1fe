@@ -108,7 +108,7 @@ const buyCart = async () => {
           </Card>
         ))}
       </div>
-{!isLoading && (Array.isArray(cart) || !cart.length === 0) && (
+{!isLoading && !(Array.isArray(cart) || cart.length === 0) && (
         <div className="center-state">
          <Button variant="success" className="buy-cart-btn" onClick={buyCart}>
   Buy Cart
